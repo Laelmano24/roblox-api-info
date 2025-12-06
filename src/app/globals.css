@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+
+  --primary-color: rgb(19, 19, 19);
+  --primary-color-hover: rgb(34, 34, 34);
+  --border-color: rgb(59, 59, 59);
+
+}
+
+@theme {
+
+  --color-primary-color: var(--primary-color);
+  --color-primary-color-hover: var(--primary-color-hover);
+  --color-border-color: var(--border-color);
+
+  --breakpoint-table: 380px;
+
+}
+
+body {
+
+  background: linear-gradient(120deg, black, var(--primary-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 100dvh;
+
+}
