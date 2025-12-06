@@ -4,7 +4,7 @@ import prepareInfos from "@/utils/prepare-infos"
 type resultInfo = {
     username: string | undefined,
     displayName: string | undefined,
-    imageAvatar: string | undefined
+    imageUrl: string | undefined
 }
 
 type typeContext = {
@@ -37,7 +37,7 @@ export async function GET(request: NextRequest, context: typeContext ) {
         const getInfo: resultInfo = prepareInfos(htmlContent)
 
         return NextResponse.json(
-            { id: Number(id), username: getInfo.username, displayName: getInfo.displayName, imageAvatar: getInfo.imageAvatar }, 
+            { id: Number(id), username: getInfo.username, displayName: getInfo.displayName, imageUrl: getInfo.imageUrl }, 
             { status: 200 }
         )
 

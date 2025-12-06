@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                 <div className="flex flex-col items-center gap-4 border-2 border-white py-8 px-10 rounded-[8px] w-[80%] table:w-50" >
                     <img
                         className="w-50"
-                        src={playerInfo.imageAvatar} 
+                        src={playerInfo.imageUrl} 
                         alt={playerInfo.username} 
                     />
                     <h2 className="tablet:text-3xl text-[18px] font-bold" >{playerInfo.displayName}</h2>

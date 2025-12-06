@@ -1,7 +1,7 @@
 type resultInfo = {
     username: string | undefined,
     displayName: string | undefined,
-    imageAvatar: string | undefined
+    imageUrl: string | undefined
 }
 
 export default function prepareInfos(htmlContent: string): resultInfo {
@@ -17,7 +17,7 @@ export default function prepareInfos(htmlContent: string): resultInfo {
     const result: resultInfo = {
         username: usernameMatch?.[1],
         displayName: displayNameMatch?.[1],
-        imageAvatar: imageMatch?.[0]
+        imageUrl: imageMatch?.[0]
     }
 
     return result
