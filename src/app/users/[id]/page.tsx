@@ -1,4 +1,4 @@
-import prepareInfos from "@/utils/prepare-infos"
+import { prepareUser, typeResultUserInfo } from "@/utils/prepare-infos"
 import Link from "next/link"
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
         }
 
-        const playerInfo = prepareInfos(htmlContent)
+        const playerInfo: typeResultUserInfo = prepareUser(htmlContent)
 
         return (
 

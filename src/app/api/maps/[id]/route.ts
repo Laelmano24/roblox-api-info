@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prepareUser, typeResultUserInfo } from "@/utils/prepare-infos"
+import { prepareMap, typeResultMapInfo } from "@/utils/prepare-infos"
 
 type typeContext = {
     params: Promise<{ id: string }>
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest, context: typeContext) {
     }
 
     try {
-        const response = await fetch(`https://www.roblox.com/pt/users/${id}/profile`)
+        const response = await fetch(`https://www.roblox.com/pt/games/${id}`)
         const htmlContent = await response.text()
 
         if (response.status === 404) {
@@ -28,10 +28,10 @@ export async function GET(request: NextRequest, context: typeContext) {
             )
         } 
 
-        const getInfo: typeResultUserInfo = prepareUser(htmlContent)
+        const getInfo: typeResultMapInfo = prepareMap(htmlContent)
 
         return NextResponse.json(
-            { id: Number(id), username: getInfo.username, displayName: getInfo.displayName, imageUrl: getInfo.imageUrl }, 
+            { id: Number(id), name: getInfo.name }, 
             { status: 200, headers: { 'Access-Control-Allow-Origin': '*' } }
         )
 
